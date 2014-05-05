@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Category', 'Ammount in $'],
+          ['Animals & hunting', 1190675], ['Decoration & furniture', 710204],
+          ['Household', 407129], ['Arms & security', 385366], ['Lover', 263368],
+          ['Salaries', 223003], ['?', 164537],
+        ]);
+
+        var options = {
+          title: 'How the ex-President spent money, if it was not construction',
+          width:400,
+          hight:400,
+          chartArea:{left:
+            20,top:40,width:"100%",height:300},
+          legend: 'none',
+          pieSliceText: 'label',
+          slices: {  2: {offset: 0.3},
+                    4: {offset: 0.4},
+                    6: {offset:0.1},
+          },
+          pieSliceTextStyle: {color: 'white', fontSize:'10'}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+        chart.draw(data, options);
+      }
+    </script>
+     <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Category', 'Ammount in $'],
+          ['CONSTRUCTION', 22255127], ['Other obsessions', 3344280],
+        ]);
+
+        var options = {
+          legend: 'none',
+          width:'400',
+          chartArea:{left:
+            0,top:0,width:"100%",height:300},
+          pieSliceText: 'label',
+          pieStartAngle: 115,
+          tooltip: { trigger: 'focus' },
+          slices: {
+            0: { color: 'yellow' },
+            1: { color: 'transparent' }
+          },
+          pieSliceTextStyle: {color: 'black', fontSize:'10'}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+        chart.draw(data, options);
+      }
+    </script>
+
+  </head>
+  <body>
+    <h1><center>Counting money of Ukraine's ex-president</center></h1>
+    <h2>About the project</h2>
+    <p>I analyzed documents found in Mezhyhirya, the residence of Ukraine's ex-president Victor Yanukovych, available <a href="http://yanukovychleaks.org">here</a>. These documents were thrown to a lake when ex-president fled the country. Journalists and activists dried and scanned them. Most of the papers are accounting documents and contain proof of massive corruption, money laundering, and huge expenses which exceed Yanykovych's official income.</p>
+    <p>These documents are not OCRed, and some are of poor quality.
+So I took a sample of random 100 documents, manually input the data to a spreadsheet, categorized it and counted the totals.</p>
+<img src="/Users/karerynapanova/Documents/yanykleaks_fotos/drowned.jpg"> </img>
+<h2>Results</h2>
+<p>The sample of 100 documents contains records of money operations worth
+<b>$ 25 599 409</b>. God knows how much money can be found in 234 567 documents.</p>
+<div id="piechart1" style="width: 900px; height: 500px;"></div>
+<p>87% of the total sum I found (more than $ 22 million) were spent on building and reconstructing real estate objects (mostly president's residence Mezhyhirya, twice the size of Buckingham Palace, hunting clubs, parliament and party offices etc).</p>
+<div id="piechart2" style="width: 900px; height: 500px;"></div>
+    <p>Tra-ta-ta</p>
+  </body>
+</html>
