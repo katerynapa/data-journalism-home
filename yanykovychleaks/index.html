@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+
+h1 {color:black;
+  text-align: center; }
+  h2{color:black}
+body{ font-family:Courier New, arial;    
+  font-size:16px;
+    color:black;
+    }
+</style>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1.0', {'packages':['corechart']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Passion');
+        data.addColumn('number', 'Money spent');
+        data.addRows([
+          ['Animals & hunting', 1190675],
+          ['Decoration & furniture', 710204],
+          ['Household', 407129], 
+          ['Arms & security', 385366], 
+          ['Lover', 263368],
+          ['Salaries', 223003], 
+          ['?', 164537],
+        ]);
+        var options = {
+        title:'His other guilty pleasures worth $ 3 million',
+        titleTextStyle: {color: 'black', italic: false, fontSize:'16'},
+        is3D: true,
+        legend: 'none',
+        'width':400,
+        'height':400,
+        chartArea:{left:
+            20,top:30,width:"100%",height:"100%"},
+            colors:['#0066CC','#267DBD','#599CA8','#80B299','#A6C98A','#D9E875','#FFFF66'],
+            pieSliceText: 'label',
+            pieStartAngle: 20,
+            pieSliceTextStyle: {color: 'black', fontSize:'14'},
+            slices: { 
+              2: {offset: 0.1},
+                    4: {offset: 0.1},
+                    6: {offset: 0.1}
+                  }
+          };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+  function myClickHandler(){
+    var selectedItem = chart.getSelection()[0];
+    var passion = data.getValue(selectedItem.row,0)
+    switch (passion) {
+       case 'Animals & hunting':
+          alert("Ukraine's ex President loved animals. Not only hunting them, but also having them around in cages. Yanukovych kept lots of pets: deers, ostriches, pigeons, horses and exotic birds. According to the documents I analyzed, he spent over a million on hunting and keeping a zoo in his residence.");
+          break;
+       case 'Decoration & furniture':
+          alert("Yanukovych's estates were large, and he loved to decorate them with marble and extravagant furniture. In the sample I found over 71 000 dollars spent on doors, chairs, lamps and carpets");
+          break;
+       case 'Household':
+          alert("Household expenses were mentioned in quite a few documents. These were the groceries, utility bills, a floor cleaner machine, tires for cars and other small purchases like swimming goggles and gear for kickboxing. They totalled 407 000 dollars");
+          break;
+       case 'Arms & security':
+          alert("This category includes IT and security services purchased by former president's companies. The main provider was a company named Dellit, owned by Yanukovych's bodyguard. I found records of more than 385 000 dollars spent on those needs");
+          break;
+       case 'Lover':
+          alert("Yanukovych is officially married. But as it turned out, he was living with his mistress, Lubov Polezhay. She owns a charity fund Doroga Maibytnego, which accounting documents I requently saw in the sample. They totalled over 263 000 dollars. There is evidence that the fund was a part of the ex-president's business empire and took part in fraud with state budget money");
+          break;
+       case 'Salaries':
+          alert("Ex-president was generous when it came to paying his bodyguards and managers of companies with thier monthly salaries exceeding $ 4000 dollars. His head of security got more than a million a year. However, Yanukovych's construction and kitchen workers made as little as 600 dollars per month. The overall ammount of salaries and travel expenses covered in the sample is 223 000 dollars.");
+          break;
+       case '?':
+          alert("This category stands for suspicious financial operations like cash deposits and money transfers between the companies connected to the former president and his son's bank. They totalled 164 000 dollars.");
+          break;
+    }
+
+  }
+  google.visualization.events.addListener(chart, 'select', myClickHandler);    
+  chart.draw(data, options);
+}
+    </script>
+     <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Category', 'Ammount in $'],
+          ['Building estates for himself', 22255127], ['Other obsessions', 3344280],
+        ]);
+
+        var options = {
+          title: 'Where did the $25 million go?',
+          titleTextStyle: {color: 'black', italic: false, fontSize:'16'},
+          is3D: true,
+          legend: 'none',
+          width:'400',
+          height:'400',
+          chartArea:{left:
+            0,top:30,width:"100%",height:"100%"},
+          pieSliceText: 'label',
+          pieStartAngle: 115,
+          tooltip: { trigger: 'focus' },
+          slices: {
+            0: { color: "#FFFF66"},
+            1: { color: 'transparent' }
+          },
+          pieSliceTextStyle: {color: 'black', fontSize:'14'}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+        chart.draw(data, options);
+      }
+    </script>
+
+  </head>
+  <body>
+    <h1><center>The Money of Ukraine's Former President</center></h1>
+    <br>
+    <h2>About the project</h2>
+    <img src="http://thenypost.files.wordpress.com/2014/02/435496_019_89457801.jpg?w=720&h=480&crop=1" width="300" hspace="5" style="float:right"> </img>
+    <p>I analyzed documents found in Mezhyhirya, the residence of Ukraine's ex-president Victor Yanukovych, available on <a href="http://yanukovychleaks.org">YanukovychLeaks</a>.<br>
+  
+    <br>These documents were dumped into a lake when ex-president fled the country. Journalists and activists dried and scanned them. Most of the papers are accounting documents and contain proof of massive corruption, money laundering, and huge expenses which exceed Yanukovych's official income.</p>
+
+    <p>There are 234 567 documents. They are not OCRed, and some are of poor quality.</p>
+    <p>I took a sample of random 100 documents, manually input the data to a <a href="https://docs.google.com/spreadsheets/d/1GHRt4yzBTQtTreeefWC0aBvKcOJ898a5_mRfe9s5E10/edit?usp=sharing">spreadsheet</a>. I categorized the financial operations mentioned and counted the totals. I also flagged the most interesting documents and studied them.</p>
+<h2>Results</h2>
+<p>The 100 documents contain records of operations worth
+<b><font color="purple",size="8">$ 25 599 409</font></b> and give a clear idea of Yanukovych's lifestyle. Some of the documents contain proof of money laundering and other unlawful operations.</p>
+<p> God knows what can be found in the remaining 234 467 documents.</p>
+<div id="piechart1" style="width: 500px; height: 400px;float: left; padding: 10px"></div>
+<br>
+<br>
+<p>87% of the total sum I found (more than <b><font color="purple",size="8">$ 22 million</font></b>) were spent on building real estate objects. They include the ex-president's residence Mezhyhirya, twice the size of Buckingham Palace; several offices in downtown Kiev; hunting clubs, parliament and party offices etc.</p>
+<p>What is wrong with this multi-million construction? </p>
+<p>Most of the projects were undertaken by company named Tantalit. It is owned by the brother of Yanukovych's chief of staff, although many believe ex-president himself controls the company. Not to mention that its records were found in his home. </p>
+<p>However, ex-president couldn't afford any of his estates. According to his latest available income declaration, Yanukovych's made <b><font color="purple",size="8">$ 96 859</font></b> a year. <p>In public, he always denied his participation in any kind of business and never reported owning luxurous property. Neither did he let any journalists inside Mezhyhirya.</p>
+<div id="piechart2" style="width:400; height:400; float: right; padding: 5px"></div>
+<br>
+<br>
+<p>Building posh estates wasn't the only obsession Ukraine's former president had. The expenditures not connected to construction total <b><font color="purple",size="8">$ 3 million</font></b> in the sample. This money gives an inside to ex-president's lifestyle, his hobbies and passions.</p>
+<p> The documents are checks for purchases for decorating the house (like hundreds of thousands od dollars spent on marble floors); transfers to his mistress's charity fund (which is supposed to help children, but was noticed in suspicious financial operations and recieved government funding); salaries of his employees and trusted people (ranging from <b><font color="purple",size="8">$ 93 163 per month </font></b> for his head of security to <b><font color="purple",size="8">$700 per month </font></b> for construction workers), financial activity of his hunting clubs and so on.</p>
+<br>
+<br>
+<br>
+
+<h2>10 amazing things I found in Yanukovych's documents</h2>
+<table width="1200" border="0" cellpadding="5" allign="center">
+  <tr>
+    <td><img src="http://i.ebayimg.com/00/s/MTIwMFgxNjAw/z/XGIAAOxy69JTBTON/$_57.JPG" width="200" height="200" style="float:right"> </img></td>
+    <td><b>1. A floor cleaner machine</b>
+      <br>
+Found in the documents is a floor cleaner machine worth $ 19 128. 
+The model mentioned in the pay check Tennant T5 Fast is searchable online and can be bought on eBay for $8 500.
+
+Not only the president cheated on his country. His employees cheated on him.
+</td>
+<td><img src="http://yanukovychleaks.org/static/docs/736/008736/normal/008736_1.png" width="200" height="200" style="float:right"></img>
+</td>
+  </tr>
+  <tr>
+    <td><img src="https://reportingproject.net/occrp/images/stories/indepth/kedr2.jpg" width="200" height="200" style="float:right" ></img></td>
+    <td><b>2. Elite hunting</b>
+      <br>
+  Hunting was a passion of Yanukovych. He owned a hunting club called Kedr, whose  memeber's were billionaires and ruling elite. Membership fees were <b>$ 100 000</b>, as found in the documents.
+<br>
+The land for former president's hunting clubhouses was granted in a shadowy way and against the will of environment activists, concerned about the fate of endangered species. Also, as recently found, millions of tax-payers money covered some needs of the wealthy hunters, like roads and animal enclosures.
+<br>
+</td>
+<td><img src="http://yanukovychleaks.org/static/docs/868/001868/normal/001868_1.png" width="200" height="200" style="float:right"></img>
+</td>
+  </tr>
+  <tr>
+    <td><img src="http://nashigroshi.org/wp-content/uploads/2014/03/%D1%84%D1%80%D0%B0%D0%BD%D0%BA%D0%B0-19.jpg" width="200" height="200" style="float:right"></image></td>
+    <td><b>3. An address plaque </b>
+      <br>
+      How much can this street plaque cost? $798 if it has a president's address on it. Yanukovych is well-known for his love for posh things, but with this sign and the money spent he could do better.
+  </td>
+  <td><img src="http://yanukovychleaks.org/static/docs/287/014287/normal/014287_1.png" width="200" height="200" style="float:right"></img></td>
+</tr>
+<tr>
+    <td><img src="http://a.scpr.org/i/cc3ad605e3eb3c5824b21cf430894e17/78868-lsquare.jpg" width="200" height="200"  style="float:right"></img></td>
+    <td><b>4. Marble, doors and chairs</b>
+      <br>
+Ukraine' former president loved marble. 
+Found: marble floors worth $ 32 400 only for one of the bathrooms.
+He also had marble walls and tables. In the 100 documents I analyzed the marble purchases totaled $374 195.
+Yanukovych also loved extravagant chairs (found one in a guest house for $ 664) and doors (there's a record of doors worth $115 370).
+  </td>
+  <td><img src="http://yanukovychleaks.org/static/docs/986/005986/normal/005986_1.png" width="200" height="200"  style="float:right"></img></td>
+</tr>
+<tr>
+  <td><img src="http://1-ps.googleusercontent.com/x/www.pravda.com.ua/img.pravda.com.ua/images/doc/e/6/e60634b-grosser1.jpg.pagespeed.ce.MBNI-3MNFG.jpg" width="200" height="200" height="200" style="float:right"></img></td>
+  <td> <b>5. A million dollar bodyguard</b>
+<br>
+Meet a unique man who makes $ 93 153 a month ($ 1 117 a year). 
+He is Anatoliy Kobylinskiy, ex-president's body-guard an owner of a company providing security services. Kobylinskiy was so appreciated by Yanukovych, that he even became a memeber of a local council and recieved a state award in 2013.
+<br>
+According to the documents, ex-president even covered his body-guard's professional training: gave $ 4 249 in cash for Kobylinskiy to travel to a shooting competition in Hungary.
+  </td>
+  <td><img src="http://yanukovychleaks.org/static/docs/005/009005/normal/009005_1.png" width="200" height="200" height="200" style="float:right"></img></td>
+</tr>
+<tr>
+  <td><img src="http://mediananny.com/content/images/original/94909.jpg" width="200" height="200" style="float:right"></img></td>
+  <td> <b>6. The mistress, the son and the Russian Orthodox church</b>
+<br>
+Lubov, ex-president's lover, has a charity fund. It was supposed to help children, but many people suspect it was laundering money. I found documents proving that the fund received a $ 11 828 transfer from Yanukovych's company.  Another $ 9 420 were transferred from a bank, owned by ex-president's son. <br>
+ <br>
+When it giving away money, Miss Polezhay was a pinchpenny. There are few mentions of her expenses: $110 for tea and candies, $ 374 for a 1000 balloons. 
+<br>
+Oh, and the Russian Orthodox church. I found a note in which the church fund asked Lubov to make a donation of $ 1 875. She approved.
+</td>
+ <td><img src="http://yanukovychleaks.org/static/docs/466/004466/normal/004466_1.png" width="200" height="200" height="200" style="float:right"></img></td>
+</tr>
+<tr>
+  <td><img src="http://ic.pics.livejournal.com/zyalt/10761149/388474/388474_original.jpg" width="200" height="200" style="float:right"></img></td>
+  <td> <b>7. Sauna with a shooting gallery </b>
+<br>
+Found in the documents are the $ 1 438 726 costs for a "sauna with a shooting gallery". I have no idea why people have to shoot in a sauna, but this isn't the only weird thing about Yanukovych and his friends.
+</td>
+<td><img src="http://yanukovychleaks.org/static/docs/244/002244/normal/002244_1.png" width="200" height="200" height="200" style="float:right"></img></td>
+</tr>
+<tr>
+  <td><img src="http://varlamov.me/2014/mechzigorie/IMG_7873.jpg" width="200" height="200" style="float:right"></img></td>
+  <td> <b> 8. Millions for the fence</b>
+<br>
+A mysterious person reported cash expenses worth $ 19,7 millions. There's a date -  August 2008 and 31 items mentioned in this list.
+<br>
+Among them is the $ 4 621 960 cost of the outer fence of Mezhyhirya, the ex-president's residence. This fence was everything I and millions of citizens saw for many years. Even the journalists were not let inside the estate.
+</td>
+<td><img src="http://yanukovychleaks.org/static/docs/244/002244/normal/002244_1.png" width="200" height="200" height="200" style="float:right"></img></td>
+</tr>
+<tr>
+  <td><img src="http://ic.pics.livejournal.com/zyalt/10761149/381593/381593_original.jpg" width="200" height="200"  style="float:right"></img></td>
+  <td> <b> 9. Animals </b>
+<br>
+Apart from hunting, Yanukovych wasn't opposed to living animals as well.
+He liked to have them around in his estates, closed in cages.
+In Mezhyhirya, the horse stables cost $ 150 091. The fence of the deer garden  was even more expensive - $ 91 104.
+<br>
+In a hunting clubhouse Syholychie, just the dog and bird enclosures totalled $ 776 349.
+
+ </td>
+ <td><img src="http://yanukovychleaks.org/static/docs/307/016307/normal/016307_1.png" width="200" height="200" height="200" style="float:right"></img></td>
+ </tr>
+ <tr>
+  <td><img src="http://static.ddmcdn.com/gif/bow-hunting-1.jpg" width="200" height="200" style="float:right"></img> </td>
+  <td><b> 10. Arms, kickboxing and a bow!</b>
+ <br>
+ I found a document containing purchases for ex-president's security needs. Among sniper's uniforms and car rent for cynologists, there was it: a bow, worth $ 2 685. I am still not sure why would Yanukovych need a bow. There's hope it's for sports. Former president didn't look very fit, but he liked sports gear: found in the other documents was a leg protector for kickboxing ($ 131) and swimming goggles ($ 180).
+</td>
+<td><img src="http://yanukovychleaks.org/static/docs/894/004894/normal/004894_1.png" width="200" height="200" height="200" style="float:right"></img></td>
+</tr>
+
+</table>
+<br>
+<br>
+<p><center><b>PROJECT BY <a href="">KATERYNA PANOVA</a></b></center></p>
+<p><center>Based on documents available on <a href="http://yanukovychleaks.org">YanukovychLeaks</a></center></p>
+  </body>
+</html>
