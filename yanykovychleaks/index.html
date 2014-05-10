@@ -112,6 +112,134 @@ body{ font-family:Courier New, arial;
         chart.draw(data, options);
       }
     </script>
+     <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number','# of document');
+        data.addColumn('string','Object');
+        data.addColumn('string','Category');
+        data.addColumn('number','Cost in doc');
+        data.addColumn('string','Location');
+      data.addColumn('string','Item, comment');
+      data.addColumn('string','Currency');
+data.addColumn('string','Company');
+data.addColumn('number','Cost in $');
+data.addColumn('number','Year');
+data.addColumn('string','Flags');
+        data.addRows([
+  [14109,"account balance","Lover's fund",1838531,"Charity fund Doroga Bydyschego","bank statement","hryvna","Charity fund Doroga Bydyschego",229816,2011,"too expensive mobile  pla?n Cell number 067 4662392, account number 4019403"],
+  [8736,"purchase","Household expenses",156000,"","Floor cleaner machine","hryvna","Kievuniversalservis",19500,2009,"Too expensive comparing to the market prices.Model tennant T5 Fast  - price found 5000$"],
+  [2812,"purchase","Construction costs",153024,"House at I Franka 25","landscape design works","hryvna","AVK-5, N Petrivtsi, I Franka 21,",19128,0,"Too expensive"],
+  [13687,"purchase","Animals & hunting",295784,"Guest house (hotel-restaurant)","forged pavilion","hryvna","AVK, Tantalit, Kedr",36973,2011,"Too expensive"],
+  [5599,"purchase","Decoration",5309,"guest house (house 3)","Chair, green color","hryvna","Tantalit",664,0,"Too expensive"],
+  [10432,"purchase","Decoration",259197,"","marble floor in the bathroom","hryvna","Tantalit",32400,0,"Too expensive"],
+  [20379,"purchase","Decoration",1719599,"","Construction costs, granite","hryvna","",214950,0,"that granite is expensive"],
+  [14287,"purchase","Decoration",6382,"residence","address board","hryvna","",798,0,"street sign"],
+  [21130,"salaries","Salaries and payments to employees",31570,"","salaries of 4 security officers","hryvna","",3946,0,"security officers were paid less than $1000 a month"],
+  [1409,"salaries","Salaries and payments to employees",4000,"","Monthly salary of one person (management)","USD","Tantalit",4000,2009,"salary"],
+  [7505,"purchase","Decoration",2317260,"","Construction costs, marble floors","hryvna","Tantalit",289658,0,"Pretty expensive floors"],
+  [9005,"salaries","Salaries and payments to employees",745300,"","Monthly salary of one person","hryvna","Tantalit",93163,2011,"monthly salary of Kobylinskiy"],
+  [22400,"money laundering","Lover's fund",94571,"Charity fund Doroga Bydyschego","The charity receives money from a Litovchenko, AVK","hryvna","Charity fund Doroga Bydyschego, Litovchenko, Tantalit",11821,0,"money laundering"],
+  [1868,"cash deposit","Animals & hunting",100000,"Kedr","A member's payment","USD","Kedr, Tantalit",100000,0,"membershiip in hunting club"],
+  [5986,"purchase","Decoration",417106,"","Decorations of marble, frames","hryvna","",52138,0,"Marble"],
+  [19922,"salary","Salaries and payments to employees",91521,"","salaries of state bodyguards (33 people), additional payments","hryvna","",11440,0,"illegal to pay the police extra cash"],
+  [3343,"salary","Salaries and payments to employees",9000,"","additional payments for security guys (15 people, most coomonly the add-on is 500$)","USD","",1125,0,"illegal to pay in dollars"],
+  [3609,"Salaries & expenditures","Salaries and payments to employees",16500,"","salaries and entertainment expenses","USD","Kievyniversalservis",16500,0,"huge salaries in USD"],
+  [18679,"purchase","Decoration",9990,"residence","flower bulbs from Slovakia, construction costs","euro","",1249,2010,"funny flower bulbs"],
+  [7694,"purchase","Lover's fund",2988,"","1000 balloons","hryvna","Charity fund Doroga Bydyschego",374,2011,"funny"],
+  [6309,"purchase","Decoration",922960,"Honka (president's house)","doors and door frames","hryvna","Tantalit",115370,2010,"expensive doors"],
+  [10479,"contract","Construction costs",25056,"spa, ivana franka 21","a bench worth $1400, feeding racks for animals or birds, construction","hryvna","Inteb",3132,0,"expensive bench"],
+  [4466,"church donation","Lover's fund",15000,"Orthodox church (Moscow Patriarchat)","the church asks president's lover to make a donation, her accountant approves","hryvna","Church",1875,2011,"church asks presidents' lover to contribute"],
+  [18231,"Cash payment","Salaries and payments to employees",33995,"","These are travel expenses for Kobylinskiy's trip to Hungary to a shooter's  competition","hryvna","Dellit, Tantallit",4249,0,"cash, Kobylinski's trip"],
+  [6427,"cash deposit","Financial transactions (income, cash deposits, transfers and other)",10000,"","","euro","Tantalit",1250,2011,"Cash"],
+  [4894,"purchase","Arms, security and other services",867751,"","arms for snipers, car payments, uniforms, bow","hryvna","Kievska Varta",108469,2011,"Arms! And a bow!"],
+  [4089,"purchase","Construction costs",6698670,"spa on an island","Construction costs, overall costs for some period","hryvna","",837334,0,"An expensive spa"],
+  [3795,"purchase","Lover's fund",28915,"Canteen","Groceries, cost of food cooked","hryvna","Slavytich-family",3614,0,"a cook reports to the president"],
+  [10747,"bank transfer","Lover's fund",75218,"","Charity fund Doroga Bydyschego recieves payments for salaries from Ykrbisnesbank","hryvna","Charity fund Doroga Bydyschego",9402,2011,"A bank affiliated with the president transfers money for salary payments to a charity fund of his lover"],
+  [558,"purchase","Construction costs",60941,"President's residency","construction materials","hryvna","ABK-5",7618,0,""],
+  [4063,"purchase","Construction costs",13767,"","Construction and transport costs","hryvna","ABK-5",1721,0,""],
+  [11804,"tax  invoice","Household expenses",3000,"AVK","monthly payment for gas","hryvna","AVK",375,0,""],
+  [13139,"salaries","Salaries and payments to employees",20069,"AVK-3","salaries of constructions workers, amount unknown","hryvna","AVK-3",2509,0,""],
+  [2886,"purchase","Salaries and payments to employees",255501,"","unclear, it's a last page of the tax form, probably mostly salaries of construction workers","hryvna","AVK-3",31938,2011,""],
+  [4058,"purchase","Construction costs",8417,"AVK","construction machinery","hryvna","AVK-3",1052,0,""],
+  [13243,"purchase","Construction costs",15077187,"","construction materials, pipes, salaries","hryvna","AVK-3",1884648,0,""],
+  [2717,"salaries","Salaries and payments to employees",134084,"","construction labor","hryvna","AVK-5",16761,0,""],
+  [19959,"salaries","Salaries and payments to employees",5051,"","driver, one, salary","hryvna","AVK-5",631,2010,""],
+  [6888,"purchase","Construction costs",133509,"","works and materials for exterior design (buldozers, equators)","hryvna","AVK-5",16689,0,""],
+  [21843,"purchase","Salaries and payments to employees",70009,"","construction labour, a tax form","hryvna","AVK-5",8751,2013,""],
+  [1898,"purchase","Construction costs",21536,"ABK-5","construction machinery & other costs","hryvna","AVK-5",2692,0,""],
+  [3272,"purchase","Construction costs",95495,"AVK","construction materials","hryvna","AVK-5",11937,2006,""],
+  [13586,"purchase","Construction costs",16649,"","Construction costs, trash management","hryvna","AVK-5",2081,0,""],
+  [12950,"purchase","Construction costs",180274,"","construction materials","hryvna","AVK-5",22534,0,""],
+  [548,"purchase","Construction costs",95495,"","Construction costs, pipes, paint, concrete","hryvna","AVK-5",11937,0,""],
+  [6084,"purchase","Construction costs",1019,"","construction machinery","hryvna","AVK-5",127,0,""],
+  [13912,"travel expenses","Lover's fund",4137,"Charity fund Doroga Bydyschego","travel expenses of employees","hryvna","Charity fund Doroga Bydyschego",517,0,""],
+  [11553,"purchase","Lover's fund",313,"","pens, office supplies","hryvna","Charity fund Doroga Bydyschego",39,0,""],
+  [11507,"purchase","Lover's fund",210,"","pens, office supplies","hryvna","Charity fund Doroga Bydyschego",26,0,""],
+  [14002,"purchase","Lover's fund",880,"charity fund Doroga Bydyschego","tea and candies","hryvna","Charity fund Doroga Bydyschego",110,0,""],
+  [20709,"purchase","Arms, security and other services",1100,"","notary services, bank check","hryvna","Chernikova A V",138,0,""],
+  [3417,"salaries","Salaries and payments to employees",6478,"","0","hryvna","Dellit",810,2011,""],
+  [3344,"salaries","Salaries and payments to employees",9826,"","2 people salary","hryvna","Dellit",1228,2011,""],
+  [16826,"salary","Salaries and payments to employees",4100,"","additional payment","hryvna","Dellit",513,0,""],
+  [14633,"purchase","Arms, security and other services",25593,"","AVK ordered security services from Dellit","hryvna","Dellit, AVK",3199,0,""],
+  [17768,"insurance payments","Animals & hunting",914,"hunting territories","hunting, insurance payments to get permit","hryvna","Kedr",114,2008,""],
+  [8446,"purchase","Construction costs",1559,"","painting brushes and enamel","hryvna","Kievuniversalservis",195,2012,""],
+  [8465,"purchase","Construction costs",3964,"","Electricity (extension cords, transformer)","hryvna","Kievuniversalservis",496,2012,""],
+  [9281,"purchase","Construction costs",2455,"","equipment, additional payment, construction","hryvna","Kievuniversalservis",307,2012,""],
+  [17532,"purchase","Construction costs",1423,"KOTS","water filters, construction","hryvna","Kievuniversalservis",178,0,""],
+  [21419,"purchase","Household expenses",11779,"","gas for cars (one person, trip for technical support)","hryvna","Kievuniversalservis",1472,2009,""],
+  [8576,"bank check","Animals & hunting",121,"","hunting, insurance payments to get permit","hryvna","Kievuniversalservis",15,0,""],
+  [15265,"turnover statement","Financial transactions (income, cash deposits, transfers and other)",265019,"","money transfer to affiliated banks","hryvna","Pozhilova E A",33127,2010,""],
+  [22560,"purchase","Decoration",1500,"office","Chair","hryvna","Tantalit",188,0,""],
+  [17927,"purchase","Construction costs",94843,"office Tantalit","repair and launch of the heating system, construction","hryvna","Tantalit",11855,2010,""],
+  [5554,"purchase","Decoration",12090,"KOTS","TV set Panasonic TH-R42PY80","hryvna","Tantalit",1511,2011,""],
+  [14315,"purchase","Decoration",8800,"","carpets","hryvna","Tantalit",1100,2011,""],
+  [33,"unclear","Financial transactions (income, cash deposits, transfers and other)",601932,"","","hryvna","Tantalit",75242,2011,""],
+  [3606,"purchase","Construction costs",78000,"helipad","Construction costs, equipment, additional payment","hryvna","Tantalit",9750,2010,""],
+  [19256,"purchase","Arms, security and other services",15000,"","accounting software, support","hryvna","Tantalit",1875,0,""],
+  [4203,"purchase","Construction costs",9449,"House at I Franka 25","plumbing","hryvna","Tantalit",1181,0,""],
+  [19032,"budget","Household expenses",1200688,"","utilities, taxes, rent (company's spenditures in 10 days)","hryvna","Tantalit",150086,0,""],
+  [1116,"purchase","Construction costs",165868,"helipad","light stands","hryvna","Tantalit",20734,2010,""],
+  [17358,"purchase","Construction costs",600000,"","please pay note, construction costs","hryvna","Tantalit",75000,0,""],
+  [14833,"money laundering","Financial transactions (income, cash deposits, transfers and other)",74000,"","bank transfer from Tantalit to AVK through an affiliated bank (consulting services)","hryvna","tantalit, avk",9250,2010,""],
+  [19272,"bank check","Construction costs",969,"","relay, construction","hryvna","Tantiema",121,0,""],
+  [3063,"purchase","Construction costs",1121000,"helipad","construction, road","hryvna","Vidrodzhenya Ukrainy",0,0,""],
+  [17135,"purchase","Household expenses",5784,"headquaters","groceries","hryvna","",723,2010,""],
+  [22919,"purchase","Household expenses",37029,"","buying detergents & car service, bank check","hryvna","",4629,0,""],
+  [19373,"purchase","Construction costs",32850,"","landscape equipment and fertilizers","hryvna","",4106,0,""],
+  [6597,"company's assets","Construction costs",4034976,"","Sum of items on the page, not the whole document. Mostly construction machinery","hryvna","",504372,0,""],
+  [11970,"purchase","Decoration",1436,"","lamp","hryvna","",180,0,""],
+  [7068,"purchase","Construction costs",1835609,"","construction costs and machinery","hryvna","",229451,0,""],
+  [558,"purchase","Construction costs",67093,"","construction materials","hryvna","",8387,0,""],
+  [21439,"purchase","Construction costs",70445,"","Construction costs, electricity, cables","hryvna","",8806,0,""],
+  [23206,"insurance payments","Salaries and payments to employees",22242,"","salary taxes","hryvna","",2780,2009,""],
+  [15367,"purchase","Construction costs",14394,"","construction costs","hryvna","",1799,0,""],
+  [18032,"purchase","Construction costs",130590,"helipad","Creating a helipad project, construction","hryvna","AVK, Tantalit",16324,0,""],
+  [16167,"purchase","Household expenses",69840,"","dashcams for president support cars, government owned cars (9 cars)","hryvna","Tantalit, Dellit",8730,2011,""],
+  [16483,"bank deposit","Financial transactions (income, cash deposits, transfers and other)",365346,"land","receiving payments for selling or renting land","hryvna","Tantalit",45668,0,""],
+  [21000,"purchase","Household expenses",18840,"","Buying 4 tires  265/50R20 106R DM-V1 BRIDGESTONE","hryvna","Kyivuniversalservice",2355,0,""],
+  [14668,"contract","Salaries and payments to employees",181275,"","construction and labor costs","hryvna","",22659,0,""],
+  [14426,"budget","Arms, security and other services",751083,"","car rent, security, software etc","hryvna","",93885,0,""],
+  [5546,"purchase","Household expenses",1450,"","leg protector for kickboxing","hryvna","KOTS, Tantalit",181,0,""],
+  [2061,"purchase","Household expenses",180,"","swimming goggles","USD","",180,0,""],
+  [3943,"purchase","Household expenses",114,"","groceries (quill eggs and apple juice)","hryvna","",14,0,""],
+  [4304,"purchase","Lover's fund",46182,"voloska 11a","corporate style","hryvna","Charity fund Doroga Bydyschego",5773,2011,""],
+  [23311,"purchase","Arms, security and other services",21328,"","Security services","hryvna","Dellit provides srvice to Tantalit",2666,2009,""],
+  [2244,"cash expenses","Construction costs",18318039,"","cash expenses on different objects, construction, including a fence for $4,6, horse stables, cages for dogs and birds etc,","USD","",18318039,2008,"enormous cash!! horse stables"],
+  [2244,"cash expenses","Animals & hunting",1017544,"Mezhyriya, Syholychie","fences for horses and dogs","USD","",1017544,2008,""],
+  [2244,"cash expenses","Arms, security and other services",175134,"","aeroshoots, permits","USD","",175134,2008,""],
+  [2244,"cash expenses","Household expenses",218883,"20a, FOK","exploitation costs of the house","USD","",218883,2008,""],
+  [16307,"purchase","Construction costs",1771185,"","Infrastructure objects (roads, warehouses, animal shelters)","hryvna","",221398,0,"Animal shelters"],
+  [16307,"purchase","Animals & hunting",288227,"","animal cages","hryvna","",36028,0,""]
+]);
+
+        var table = new google.visualization.Table(document.getElementById('table1'));
+        table.draw(data, {showRowNumber: true, height:350});
+      }
+    </script>
 
   </head>
   <body>
@@ -125,6 +253,7 @@ body{ font-family:Courier New, arial;
 
     <p>There are 234 567 documents. They are not OCRed, and some are of poor quality.</p>
     <p>I took a sample of random 100 documents and manually input the data on this <a href="https://docs.google.com/spreadsheets/d/1GHRt4yzBTQtTreeefWC0aBvKcOJ898a5_mRfe9s5E10/edit?usp=sharing">spreadsheet</a>. I categorized the financial operations mentioned and counted the totals. I also flagged the most interesting documents and studied them.</p>
+    <div id='table1'></div>
 <h2>Results</h2>
 <p>The 100 documents contain records of operations worth
 <b><font color="purple",size="8">$ 25,599.409</font></b> and give a clear idea of Yanukovych's lifestyle. Some of the documents contain proof of money laundering and other unlawful operations.</p>
