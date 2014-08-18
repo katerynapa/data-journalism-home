@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["geochart"]});
+      google.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'How many kids came from this country'],
+          ['Honduras', 13215],
+          ['Mexico', 11552],
+          ['Guatemala', 11434],
+          ['El Salvador', 9830],
+          ['Equador', 500],
+          ['Nicaragua', 140],
+          ['China', 73],
+          ['Peru', 39],
+          ['India', 38],
+          ['Albania', 20],
+          ['Romania', 13],
+          ['Belize', 12],
+          ['Haiti', 12],
+          ['Brazil', 5],
+          ['Dominican Republic', 5],
+          ['Bangladesh', 4],
+          ['Costa Rica', 3],
+          ['Cuba', 3],
+          ['Colombia', 2],
+          ['Argentina', 1],
+          ['Nepal', 1],
+          ['Bahamas', 1],
+          ['Bolivia', 1],
+          ['Canada', 1],
+          ['Morocco', 1]
+        ]);
+
+        var options = {
+           displayMode: 'markers',
+colorAxis: {colors: ['black', '#e31a1c']},
+magnifyingGlass: {enable: true, zoomFactor: 3.0},
+enableRegionInteractivity: true,
+ legend: {textStyle: {color: 'black', fontSize: 12}}
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h1> Where do kids caught by Border Patrol come from?</h1>
+    <p></p>
+    <p></p>
+     <p></p>
+   <div id="regions_div" style="width: 900px; height: 500px;"></div>
+   <p> Data represents unaccompanied minors apprehended by Border Patrol from October 2013 to July 2014.</p>
+   <p>Source: U.S. Customs and Border Protection, U.S. Border Patrol Unaccompanied Alien Children Apprehension Book Outs</p>
+  </body>
+</html>
